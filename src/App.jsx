@@ -10,7 +10,6 @@ function App() {
         db.collection("todos").onSnapshot(snapshot => {
             let theTodos = [];
             snapshot.forEach(doc => {
-                console.log(doc.data());
                 theTodos.push({ id: doc.id, ...doc.data() });
             });
             setTodos(theTodos);
